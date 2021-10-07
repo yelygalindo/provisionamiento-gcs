@@ -8,3 +8,4 @@ chmod +x /home/raillon/update.sh
 curl -L https://raw.githubusercontent.com/yelygalindo/provisionamiento-gcs/main/web/nginx.conf > nginx.conf 
 mv nginx.conf /etc/nginx/ 
 systemctl start nginx
+mkdir /docs
