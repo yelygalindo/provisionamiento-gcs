@@ -36,7 +36,6 @@
     },
     "adminPasswordOrKey": {
       "type": "securestring",
-      "defaultValue": "Ras150574.",
       "metadata": {
         "description": "SSH Key or password for the Virtual Machine. SSH key is recommended."
       }
@@ -293,7 +292,7 @@
           "typeHandlerVersion": "2.0",
           "autoUpgradeMinorVersion": true,
           "settings": {
-            "commandToExecute": "[concat('yum -y install curl unzip java-1.8.0-openjdk-devel && curl https://downloads.lightbend.com/scala/2.12.10/scala-2.12.10.rpm --output scala-2.12.10.rpm && yum -y install scala-2.12.10.rpm && rm -f /etc/yum.repos.d/bintray-rpm.repo && curl -L https://www.dropbox.com/s/96w5fmb3jrk6wla/sbt-rpm.repo?dl=1 > sbt-rpm.repo && mv sbt-rpm.repo /etc/yum.repos.d/ && yum -y install sbt git which yum-utils rpm-build && yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo && yum install -y docker-ce docker-ce-cli containerd.io')]"
+            "commandToExecute": "[concat('yum -y install curl unzip java-1.8.0-openjdk-devel && curl https://downloads.lightbend.com/scala/2.12.10/scala-2.12.10.rpm --output scala-2.12.10.rpm && yum -y install scala-2.12.10.rpm && rm -f /etc/yum.repos.d/bintray-rpm.repo && curl -L https://raw.githubusercontent.com/yelygalindo/provisionamiento-gcs/main/scala/sbt-rpm.repo > sbt-rpm.repo && mv sbt-rpm.repo /etc/yum.repos.d/ && yum -y install sbt git which yum-utils rpm-build && yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo && yum install -y docker-ce docker-ce-cli containerd.io')]"
           }
         }
     }    
