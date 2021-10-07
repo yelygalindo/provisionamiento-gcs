@@ -17,7 +17,7 @@ az group create --name "resource-group" --location "your location"
 
 # create the Postgres VM
 ```
-az deployment group validate --name "pgFPSvr" --resource-group "resource-group" --template-file "./pg/azuredeploy.json" --parameters new=true
+az deployment group validate --name "webFPSvr" --resource-group "resource-group" --template-file "./pg/azuredeploy.json" --parameters new=true
 ```
 
 # create the Nginx VM
