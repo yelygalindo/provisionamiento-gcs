@@ -1,0 +1,13 @@
+FROM centos:centos7
+
+RUN yum -y update && \
+    yum -y install epel-release && \
+    yum -y install sudo curl java-1.8.0-openjdk-devel && \
+    curl https://downloads.lightbend.com/scala/2.12.10/scala-2.12.10.rpm --output scala-2.12.10.rpm && \
+    yum -y install scala-2.12.10.rpm && \ 
+    rm -f /etc/yum.repos.d/bintray-rpm.repo && \
+    curl -L https://raw.githubusercontent.com/yelygalindo/provisionamiento-gcs/main/scala/sbt-rpm.repo > sbt-rpm.repo && \
+    mv sbt-rpm.repo /etc/yum.repos.d/ && \
+    yum -y install sbt install git which yum-utils rpm-build && \
+    yum -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm && \
+    rm -rf /var/cache/yum    
